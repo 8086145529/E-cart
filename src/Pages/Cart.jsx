@@ -2,7 +2,9 @@ import React from 'react'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <div className='mt-5' style={{color:'white'}}>
+    Cart
+    </div>
   )
 }
 

@@ -1,10 +1,27 @@
 
+import { Routes,Route } from 'react-router-dom';
 import './App.css';
+import Cart from './Pages/Cart';
+import Wishlist from './Pages/Wishlist';
+import Home from './Pages/Home';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 
 function App() {
   return (
    <>
-   <h1>E-Cart</h1>
+
+   <Header/>
+
+   <Routes>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/cart' element={<Cart/>}/>
+    <Route path='/wishlist' element={<Wishlist/>}/>
+   </Routes>
+
+   <Footer/>
+   
    </>
   );
 }
