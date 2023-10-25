@@ -26,10 +26,7 @@ Currently v5.3.2.
         <Link to={'https://bootswatch.com/'}style={{textDecoration:"none"}}>React Bootstrap</Link>
         <Link to={'https://bootswatch.com/'} style={{textDecoration:"none"}}>Routing</Link>
         </div>
-        {/* <div className=''>
-            <h3 style={{height:'50px'}}>Contact Us</h3>
-
-        </div> */}
+        -
     </div>
     <p>Copyright © 2023 React Bootstrap. Built with Docusaurus.</p>
 
