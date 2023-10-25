@@ -8,7 +8,7 @@ const useFetch = (url)=>{
                 setData(result)  // ivide nammuk api call cheyth kittuna resultine componentil useFetch function call cheyumbol kittanam,athinayitt useFetach functionil ninnum athine return cheyanam,i.e useEffect functionte velliyil athine access cheyanamenkil,useEffectinte velliyil data ennnoru state create cheythitt aa stateinte value ee api calling vazhi kittuna result aayi set cheyuka.appol ee stateine return cheythal mathi.
             })
         })
-    },[url])
+    },[url]) //  This means that the effect will re-run whenever the url prop changes. This ensures that if the url prop changes, the effect (i.e., the fetch request) will be triggered again.
 
     return data
 }

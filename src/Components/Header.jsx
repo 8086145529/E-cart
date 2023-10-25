@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 function Header() {
-  const wishlist = useSelector((state)=>state.wishlistReducer)
+  const wishlist = useSelector((state)=>state.wishlistReducer)//ee wishlist arrayil nammal Home componentile ethoke cardsile(Each product from the data array) wishlist buttone aano click cheythath,aa cards (products) mathram store cheythittula stateil ninnum undakiya array aan ith.
+  const cart = useSelector((state)=>state.cartReducer)
   return (
     
          <Navbar style={{zIndex:"1",height:'50px'}} expand="lg" className="bg-primary position-fixed top-0 w-100 mb-5 ">
@@ -22,7 +23,7 @@ function Header() {
             </Link></Nav.Link>
             <Nav.Link ><Link to={"/cart"} className='d-flex align-items-center' style={{textDecoration:"none",color:'black',fontWeight:'bold'}}> Cart
             <i className='fa-solid fa-cart-shopping text-warning me-2'></i>
-            <Badge bg="light">9</Badge>
+            <Badge bg="light">{cart.length}</Badge>
             </Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
