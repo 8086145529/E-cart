@@ -17,6 +17,8 @@ function Home() {
 {/* sm={12} md={6} lg={4} xl={3} means medium sizeil 6/12 = 1/2 i.e half portion of the available space eduthitt ee oru column display cheyum.largeil 4/12 = 1/3 eduthitt ee oru column display aavum.i.e 4 columns indenkil 3 column oru rowilum remaining 1 column next rowilum undayirikum  */}
 {/* data is an array of objects(products).where each product is an object */}
 {/* Ee data enna arrayine base cheythitt venam Rowile Column and it's contents display aavan  */}
+
+{/* Search bar */}
 <div>
   <input placeholder='Search product name' className='form-control w-25 mb-5' onChange={e=>setSearchTerm(e.target.value)} type="text" />
 </div>
