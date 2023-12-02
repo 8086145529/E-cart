@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { emptyCart, removeFromCart } from '../redux/slice/cartSlice'
 
 function Cart() {
+ 
   const navigate = useNavigate()
   const cartArray = useSelector((state)=>state.cartReducer)
   const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function Cart() {
     {
       cartArray.length>0?
       <div className='row mt-5'>
+     
         <div className='col-lg-7'>
           <table className='table shadow border'>
             <thead>

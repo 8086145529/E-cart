@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Row,Card,Button } from 'react-bootstrap'
 import useFetch from '../Hooks/useFetch'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,6 +8,7 @@ import { addToWishlist } from '../redux/slice/wishlistSlice'
 import { addToCart } from '../redux/slice/cartSlice'
 
 function Home() {
+  const [searchTerm,setSearchTerm] = useState("")
   const dispatch = useDispatch()
   const data = useFetch("https://fakestoreapi.com/products")
   console.log(data);
@@ -16,8 +17,17 @@ function Home() {
 {/* sm={12} md={6} lg={4} xl={3} means medium sizeil 6/12 = 1/2 i.e half portion of the available space eduthitt ee oru column display cheyum.largeil 4/12 = 1/3 eduthitt ee oru column display aavum.i.e 4 columns indenkil 3 column oru rowilum remaining 1 column next rowilum undayirikum  */}
 {/* data is an array of objects(products).where each product is an object */}
 {/* Ee data enna arrayine base cheythitt venam Rowile Column and it's contents display aavan  */}
+<div>
+  <input placeholder='Search product name' className='form-control w-25 mb-5' onChange={e=>setSearchTerm(e.target.value)} type="text" />
+</div>
      {
-     data?.length>0?data?.map((product,index)=>( // ippo arrayude lengthinod equal aayittula number of cards display aavum.without
+     data?.length>0?data.filter((product)=>{
+      if(searchTerm == ""){
+        return product
+      }else if(product.title.toLowerCase().includes(searchTerm.toLowerCase())){
+        return product
+      }
+     }).map((product,index)=>( // ippo arrayude lengthinod equal aayittula number of cards display aavum.without
        <Col key={index} className='mb-5' sm={12} md={6} lg={4} xl={3}>
        <Card className='shadow rounded' style={{ width: 'auto',height:'30rem' }}>
        <Card.Img height={'200px'}  variant="top" src={product.image} />
@@ -39,7 +49,6 @@ function Home() {
      </Card>
        </Col>
      )):<p className='text-danger fw-bolder fs-4'>Nothing to display!!!</p>
-     
       }
     </Row>
   )
